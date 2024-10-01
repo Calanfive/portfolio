@@ -1,44 +1,57 @@
 <script setup lang="ts">
-
-defineProps<{ msg: string }>()
+defineProps<{ msg: string }>();
 
 import Button from './components/ui/button/Button.vue';
 import {
-    Carousel, CarouselContent, CarouselItem, CarouselNext,
-    CarouselPrevious
-} from '@/components/ui/carousel'
-import Card from './components/ui/card/Card.vue'
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from '@/components/ui/carousel';
+import Card from './components/ui/card/Card.vue';
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
-    TooltipTrigger
-} from '@/components/ui/tooltip'
-
+    TooltipTrigger,
+} from '@/components/ui/tooltip';
 </script>
-
-
 
 <template>
     <div class="w-full h-screen bg-stone-900 flex justify-evenly items-center">
         <div class="flex-col">
             <h1 class="text-white bg-stone-900">Camille LE LAN Developpeur</h1>
-            <div class="w-2/4 h-1/4 border-solid border border-white rounded-lg">
-                <p class="text-white m-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                    only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            <div
+                class="w-2/4 h-1/4 border-solid border border-white rounded-lg"
+            >
+                <p class="text-white m-2">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged.
                 </p>
             </div>
         </div>
         <div class="flex-col">
-            <Carousel v-slot="{ canScrollNext }" class="relative w-full max-w-xs">
+            <Carousel
+                v-slot="{ canScrollNext }"
+                class="relative w-full max-w-xs"
+            >
                 <CarouselContent>
                     <CarouselItem v-for="(_, index) in 5" :key="index">
                         <div class="p-1">
                             <Card>
-                                <CardContent class="flex aspect-square items-center justify-center p-6">
-                                    <span class="text-white text-4xl font-semibold">{{ index + 1 }}</span>
+                                <CardContent
+                                    class="flex aspect-square items-center justify-center p-6"
+                                >
+                                    <span
+                                        class="text-white text-4xl font-semibold"
+                                        >{{ index + 1 }}</span
+                                    >
                                 </CardContent>
                             </Card>
                         </div>
@@ -50,9 +63,7 @@ import {
             <TooltipProvider>
                 <Tooltip>
                     <TooltipTrigger as-child>
-                        <Button variant="outline">
-                            Select project
-                        </Button>
+                        <Button variant="outline"> Select project </Button>
                     </TooltipTrigger>
                     <TooltipContent>
                         <p>Click for more details</p>
