@@ -1,26 +1,20 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 import Button from './components/ui/button/Button.vue';
+
+defineProps<{ msg: string }>()
+
 </script>
 
 <template>
-  <div>
-    <Button>Test</Button>
+  <h1 class="text-white">{{ msg }}</h1>
+  <div class="w-full h-screen bg-stone-900 flex justify-evenly items-center">
+    <div class="w-2/4 h-1/4 border-solid border-2 border-white rounded-lg">
+      <p class="text-white m-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    </div>
+    <div class="w-1/4 h-1/4 border-2 border-white rounded-lg">
+      <p></p>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <App msg="TITRE HELLOWORD COMPONENT" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
