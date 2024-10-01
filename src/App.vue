@@ -22,9 +22,12 @@ defineProps<{ msg: string }>()
 import Button from './components/ui/button/Button.vue';
 
 defineProps<{ msg: string }>()
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, 
 CarouselPrevious } from '@/components/ui/carousel'
-import { Card, CardContent } from '@/components/ui/card'
+
+import Card from './components/ui/card/Card.vue'
+
 </script>
 
 <template>
@@ -39,7 +42,7 @@ import { Card, CardContent } from '@/components/ui/card'
         <div class="p-1">
           <Card>
             <CardContent class="flex aspect-square items-center justify-center p-6">
-              <span class="text-4xl font-semibold">{{ index + 1 }}</span>
+              <span class="text-white text-4xl font-semibold">{{ index + 1 }}</span>
             </CardContent>
           </Card>
         </div>
@@ -49,6 +52,6 @@ import { Card, CardContent } from '@/components/ui/card'
     <CarouselNext v-if="canScrollNext" />
   </Carousel>
   </div>
-  <App msg="TITRE HELLOWORD COMPONENT" />
+  <App msg="Camille LE LAN Developpeur" />
 
 </template>
