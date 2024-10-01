@@ -20,10 +20,10 @@ import {
 
 <template>
     <div class="w-full h-screen bg-stone-900 flex justify-evenly items-center">
-        <div class="flex-col">
+        <div class="flex-col w-1/2 items-center">
             <h1 class="text-white bg-stone-900">Camille LE LAN Developpeur</h1>
             <div
-                class="w-2/4 h-1/4 border-solid border border-white rounded-lg"
+                class="border-solid border border-white rounded-lg"
             >
                 <p class="text-white m-2">
                     Lorem Ipsum is simply dummy text of the printing and
@@ -36,7 +36,7 @@ import {
                 </p>
             </div>
         </div>
-        <div class="flex-col">
+        <div class="flex-col w-1/4 items-center justify-end">
             <Carousel
                 v-slot="{ canScrollNext }"
                 class="relative w-full max-w-xs"
