@@ -16,12 +16,13 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { Skeleton } from '@/components/ui/skeleton';
 </script>
 
 <template>
-    <div class="w-full h-screen bg-stone-900 flex justify-evenly items-center">
+    <div class="w-full h-screen bg-gradient-to-r from-black via-gray-400 to-black flex justify-evenly items-center">
         <div class="flex-col w-1/2 items-center">
-            <h1 class=" uppercase font-semibold text-2xl text-white p-1 bg-stone-900">Camille LE LAN - Developpeur</h1>
+            <h1 class=" uppercase font-semibold text-2xl text-white p-1">Camille LE LAN - Developpeur</h1>
             <div
                 class="border-solid border border-white rounded-lg"
             >
@@ -46,12 +47,21 @@ import {
                         <div class="p-1">
                             <Card>
                                 <CardContent
-                                    class="flex aspect-square items-center justify-center p-6"
+                                    class="flex flex-col aspect-square items-center justify-center p-6"
                                 >
+                                <div class="flex flex-col space-y-2">
                                     <span
-                                        class="text-white text-4xl font-semibold"
+                                        class="text-white text-4xl font-semibold animate-pulse "
                                         >{{ index + 1 }}</span
                                     >
+                                    <div class="space-y-2">
+
+                                    <Skeleton class="h-28 w-[200px]" />
+                                    <p class="text-white animate-pulse">coming soon
+                                    </p>
+                                    </div>
+                                </div>
+
                                 </CardContent>
                             </Card>
                         </div>
@@ -63,7 +73,7 @@ import {
             <TooltipProvider>
                 <Tooltip>
                     <TooltipTrigger as-child>
-                        <Button variant="outline"> Select project </Button>
+                        <Button class=" hover:bg-gray-300"  variant="outline"> Select project </Button>
                     </TooltipTrigger>
                     <TooltipContent>
                         <p>Click for more details</p>
