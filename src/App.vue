@@ -20,7 +20,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 </script>
 
 <template>
-    <div class="w-full h-screen bg-gradient-to-b from-black via-blue-800 to-black flex justify-evenly items-center">
+    <div class="w-full h-screen bg-gradient-to-b from-black via-yellow-700 to-black flex justify-evenly items-center">
         <div class="flex-col w-1/2 items-center">
             <h1 class=" uppercase font-semibold text-2xl text-white text-opacity-90 p-1">Camille LE LAN - Developpeur</h1>
             <div
