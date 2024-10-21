@@ -17,10 +17,26 @@ import {
     TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { Skeleton } from '@/components/ui/skeleton';
+import Input from './components/ui/input/Input.vue';
+import Label from './components/ui/label/Label.vue';
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+import { ref } from 'vue';
+const username = ref('')
+const SHEET_SIDES = ['right'] as const
 </script>
 
 <template>
     <div class="w-full h-screen bg-gradient-to-b from-black via-yellow-700 to-black flex justify-evenly items-center">
+
         <div class="flex-col w-1/2 items-center">
             <h1 class=" uppercase font-semibold text-2xl text-white text-opacity-90 p-1">Camille LE LAN - Developpeur</h1>
             <div
@@ -34,6 +50,45 @@ import { Skeleton } from '@/components/ui/skeleton';
                     but also the leap into electronic typesetting, remaining
                     essentially unchanged.
                 </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+                <Sheet v-for="side in SHEET_SIDES" :key="side">
+                    <SheetTrigger as-child>
+                        <Button variant="outline">
+                        {{ side }}
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent :side="side">
+                        <SheetHeader>
+                            <SheetTitle>Demande de contact</SheetTitle>
+                            <SheetDescription>
+                                Merci de l'intérêt que vous portez à mon travail. 
+                                Je vous répondrai dans les plus brefs délais.
+                            </SheetDescription>
+                        </SheetHeader>
+                        <div class="grid gap-4 py-4">
+                            <div class="grid items-center grid-cols-4 gap-4">
+                                <Label for="name" class="text-right">Nom</Label>
+                                <Input id="name" v-model="username" class="col-span-3" />
+                            </div>
+                            <div class="grid items-center grid-cols-4 gap-4">
+                                <Label for="username" class="text-right">Prénom</Label>
+                                <Input id="username" v-model="username" class="col-span-3" />
+                            </div>
+                            <div class="grid items-center grid-cols-4 gap-4">
+                                <Label for="company" class="text-right">Société</Label>
+                                <Input id="company" v-model="username" class="col-span-3" />
+                            </div>
+                        </div>
+                        <SheetFooter>
+                            <SheetClose as-child>
+                                <Button type="submit">
+                                    Envoyer le message
+                                </Button>
+                            </SheetClose>
+                        </SheetFooter>
+                    </SheetContent>
+                </Sheet>
             </div>
         </div>
         <div class="flex-col justify-items-center-w-1/4 p-2">
